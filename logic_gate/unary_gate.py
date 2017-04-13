@@ -1,0 +1,2 @@
+class UnaryGate:
+    pass
