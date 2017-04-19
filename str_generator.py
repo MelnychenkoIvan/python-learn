@@ -8,7 +8,6 @@ def score(goal, current):
     return goal == current
 
 
-
 def generator_rand_str(str_len, alphabet):
     result = ''
 
