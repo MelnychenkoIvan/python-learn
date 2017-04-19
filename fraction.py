@@ -1,8 +1,15 @@
 class Fraction:
     # Constructor
     def __init__(self, top, bottom):
-        self.num = top
-        self.den = bottom
+        common = gcd(top, bottom)
+        self.num = top//common
+        self.den = bottom//common
+
+    def get_num(self):
+        return self.num
+
+    def get_den(self):
+        return self.den
 
     # toString
     def __str__(self):
@@ -16,9 +23,8 @@ class Fraction:
     def __add__(self, other):
         newnum = self.num * other.den + other.num * self.den
         newden = self.den * other.den
-        common = gcd(newnum, newden)
 
-        return Fraction(newnum//common, newden//common)
+        return Fraction(newnum, newden)
 
     # overload equal
     def __eq__(self, other):
@@ -30,9 +36,14 @@ class Fraction:
     def __sub__(self, other):
         newnum = self.num * other.den - other.num * self.den
         newden = self.den * other.den
-        common = gcd(newnum, newden)
 
-        return Fraction(newnum//common, newden//common)
+        return Fraction(newnum, newden)
+
+    def __mul__(self, other):
+        newnum = self.num * other.num
+        newden = self.den * other.den
+
+        return Fraction(newnum, newden)
 
 
 def gcd(m, n):
