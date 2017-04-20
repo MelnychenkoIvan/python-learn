@@ -1,4 +1,6 @@
 def anagram_solution1(s1, s2):
+    if len(s1) != len(s2):
+        return False
     alist = list(s2)
 
     stillOk = True
@@ -24,6 +26,9 @@ def anagram_solution1(s1, s2):
 
 
 def anagram_solution2(s1, s2):
+    if len(s1) != len(s2):
+        return False
+
     alist1 = list(s1)
     alist2 = list(s2)
 
@@ -43,4 +48,4 @@ def anagram_solution2(s1, s2):
 
 
 print(anagram_solution1('python', 'thonpy'))
-print(anagram_solution2('pythonz', 'thonpy'))
+print(anagram_solution2('python', 'thonpy'))
