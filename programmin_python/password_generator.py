@@ -15,7 +15,7 @@ def pass_generator(count_char=8):
 
     for i in range(count_char):
         passw.append(random.choice(arr))
-    return "".join(passw)
+    return ''.join(passw)
 
 
 print(pass_generator(10))
