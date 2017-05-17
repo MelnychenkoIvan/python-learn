@@ -1,18 +1,25 @@
+import locale
+
+locale.setlocale(locale.LC_NUMERIC, 'Russian_Russia.1251')
+print(locale.getlocale())
+
 """This is the command of our module"""
 file = open('index.html', 'r', encoding='utf-8')
 template_file = file.read()
 template_var = {"title": 'Some Title'}
-print(template_file.format(**template_var))
+# print(template_file.format(**template_var))
 
 file.close()
 
-html = """
-<html>
-    <head>
-        <title>{title}</title>
-    </head>
-    <body>
-        <h1>{main_title}</h1>
-    </body>
-</html>
-""".format(**{"title": "title", "main_title": "Main Title"})
+
+class Car:
+
+    def __init__(self, model, color):
+        self.model = model
+        self.color = color
+
+
+car = Car('BMW', 'red')
+car2 = Car('Lada', 'blue')
+print('{0.model:1s} - {0.color}\n{1.model:10} - {1.color}\n{2:c}'.format(car, car2, 65))
+
