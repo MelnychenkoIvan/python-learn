@@ -53,7 +53,7 @@ def matches(open_s, close_s):
 
 
 def number_converter(decNumber, base=2):
-    """Converting numbers"""
+    """Converting number to different number system"""
 
     digits = "0123456789ABCDEF"
     remstack = Stack()
